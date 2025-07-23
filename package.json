@@ -2,12 +2,12 @@
   "name": "college-events-backend",
   "version": "1.0.0",
   "description": "Backend API for College Events Platform",
-  "main": "server.js",
+  "main": "backend/server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon backend/server.js",
-  "build": "npm install --include=dev --prefix frontend && npm run build --prefix frontend",
-    "start": "nodemon backend/server.js"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js"
   },
   "dependencies": {
     "axios": "^1.10.0",
@@ -38,3 +38,4 @@
   "author": "Your Name",
   "license": "MIT"
 }
+
