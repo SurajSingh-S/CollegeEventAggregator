@@ -18,7 +18,6 @@ const router = express.Router();
 
 // Public routes
 router.get('/', getEvents);
-router.get('/:id', getEventById);
 
 // Protected routes
 router.post('/', protect, adminOnly, uploadSingle('image'), validateEventCreation, createEvent);
@@ -32,5 +31,8 @@ router.get('/user/registered', protect, studentOnly, getUserEvents);
 // Admin routes
 router.get('/admin/my-events', protect, adminOnly, getAdminEvents);
 router.get('/:id/attendees', protect, adminOnly, getEventAttendees);
+
+router.get('/:id', getEventById);
+
 
 export default router;
