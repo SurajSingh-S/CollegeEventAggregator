@@ -83,27 +83,27 @@ export const AuthProvider = ({ children }) => {
 
 
   // Set axios default header
-  // useEffect(() => {
-  //   if (state.token) {
-  //     axios.defaults.headers.common['Authorization'] = `Bearer ${state.token}`;
-  //   } else {
-  //     delete axios.defaults.headers.common['Authorization'];
-  //   }
-  // }, [state.token]);
+  useEffect(() => {
+    if (state.token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${state.token}`;
+    } else {
+      delete axios.defaults.headers.common['Authorization'];
+    }
+  }, [state.token]);
 
-  // const loadUser = async () => {
-  //   if (state.token) {
-  //     try {
-  //       const res = await axios.get('/api/auth/profile');
-  //       dispatch({ type: 'USER_LOADED', payload: res.data });
-  //     } catch (error) {
-  //       console.error('Error loading user:', error);
-  //       dispatch({ type: 'AUTH_ERROR' });
-  //     }
-  //   } else {
-  //     dispatch({ type: 'CLEAR_LOADING' });
-  //   }
-  // };
+  const loadUser = async () => {
+    if (state.token) {
+      try {
+        const res = await axios.get('/api/auth/profile');
+        dispatch({ type: 'USER_LOADED', payload: res.data });
+      } catch (error) {
+        console.error('Error loading user:', error);
+        dispatch({ type: 'AUTH_ERROR' });
+      }
+    } else {
+      dispatch({ type: 'CLEAR_LOADING' });
+    }
+  };
 
   const login = async (email, password) => {
     try {
