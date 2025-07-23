@@ -28,14 +28,9 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": [
-    "college",
-    "events",
-    "mern",
-    "api",
-    "nodejs"
-  ],
-  "author": "Your Name",
-  "license": "MIT"
+  "engines": {
+    "node": "18.x"
+  }
 }
+
 
