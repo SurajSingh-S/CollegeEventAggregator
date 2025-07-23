@@ -1,13 +1,19 @@
+
 {
   "name": "college-events-backend",
   "version": "1.0.0",
   "description": "Backend API for College Events Platform",
   "main": "backend/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "nodemon backend/server.js",
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend/server.js"
+    "build": "npm ci --prefix frontend && cd frontend && npx --yes vite build",
+    "start": "node backend/server.js",
+    "postinstall": "npm ci --prefix frontend"
   },
   "dependencies": {
     "axios": "^1.10.0",
@@ -28,9 +34,15 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "engines": {
-    "node": "18.x"
-  }
+  "keywords": [
+    "college",
+    "events",
+    "mern",
+    "api",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }
 
 
