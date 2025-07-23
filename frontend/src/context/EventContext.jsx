@@ -684,6 +684,14 @@ import { createContext, useContext, useReducer } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+
+axios.defaults.baseURL = 
+  process.env.NODE_ENV === 'production'
+    ? '/api'
+    : 'http://localhost:5000/api';
+
+
+
 const EventContext = createContext();
 
 // Helper: Normalize image URLs

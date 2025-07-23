@@ -1,12 +1,23 @@
+
 {
   "name": "college-events-backend",
   "version": "1.0.0",
   "description": "Backend API for College Events Platform",
   "main": "backend/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "nodemon backend/server.js",
+<<<<<<< HEAD
     "build": "chmod +x frontend/node_modules/.bin/vite && npm install --prefix frontend && npm run build --prefix frontend",    "start": "node backend/server.js"
+=======
+    "build": "npm ci --prefix frontend && cd frontend && npx --yes vite build",
+    "start": "node backend/server.js",
+    "postinstall": "npm ci --prefix frontend"
+>>>>>>> 999e4a0cf235a3a1b085354bbe8f1ae7d3f89b4b
   },
   "dependencies": {
     "axios": "^1.10.0",
@@ -37,3 +48,5 @@
   "author": "Your Name",
   "license": "MIT"
 }
+
+
