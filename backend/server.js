@@ -168,7 +168,7 @@ app.use(
       connectSrc: [
         "'self'",
         "https://res.cloudinary.com",
-        process.env.FRONTEND_URL || 'http://localhost:5173',
+        'http://localhost:5173','http://localhost:5175','http://localhost:5174'
       ],
       objectSrc: ["'none'"],
       upgradeInsecureRequests: [],
@@ -193,7 +193,9 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // CORS
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    // origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+        origin:['http://localhost:5173', 'http://localhost:5175','http://localhost:5174'],
+
     credentials: true,
   })
 );
